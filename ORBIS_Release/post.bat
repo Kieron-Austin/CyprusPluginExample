@@ -1,0 +1,1 @@
+.\make_fself.exe CyprusPluginExample.prx CyprusPluginExample.plugin
