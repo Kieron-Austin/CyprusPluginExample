@@ -17,3 +17,5 @@ Cyprus Menu
 PS4 SDK 1.750
 Visual Studio 2012
 Jailbroken PS4/PS5
+
+Discord - tickle_me_pickles
