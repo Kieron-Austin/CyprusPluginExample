@@ -6,7 +6,23 @@
 #include "natives.h"
 #include <cstddef>
 
+
 static const CyprusApi* api = nullptr;
+//////////////////// EXAMPLE FUNCTIONS ////////////////////
+static void scanTestExample() {
+    uintptr_t hit = api->FindPattern("55 48 89 E5", 0, CYPRUS_SCAN_ADDRESS);
+    char buf[64];
+    if (hit) snprintf(buf, sizeof(buf), "Found at 0x%llX", (unsigned long long)hit);
+    else     snprintf(buf, sizeof(buf), "Pattern not found");
+	api->Notify("Scan Result", buf);
+}
+
+static void GlobalExample() {
+    const int Snow = 1;
+    Global(api, 262145).At(4413).As<int>() = Snow;
+    api->Notify("Global Result", "Worked");
+}
+
 static bool showPanel = false;
 
 static void drawText(const char* str, float x, float y, float scale, int r, int g, int b, int a) {
